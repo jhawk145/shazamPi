@@ -91,19 +91,7 @@ async def main():
             
         # If button is pushed, give response by lighting all three LEDs in blue and initiate code
         else:
-            strip.set_pixel_rgb(0, blue)
-            strip.set_pixel_rgb(1, blue)
-            strip.set_pixel_rgb(2, blue)
-            strip.show()
-            print("----------------------------------------\nThe button has been pushed.")
-            
-            # Check internet connection for 2 seconds
-            try:
-                s = socket.create_connection((socket.gethostbyname("www.google.com"), 80), 2)
-                internet = "online"
-            except:
-                internet = "offline"
-    
+
             # If connected to the internet, analyze!
             if internet == "online":
                 print("Pi is online. Ready to analyze.")
